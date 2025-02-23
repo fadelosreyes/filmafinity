@@ -17,7 +17,8 @@ class PeliculaFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'duracion' => fake()->numberBetween(90, 180),
+            'director' => fake()->name,
         ];
     }
 }

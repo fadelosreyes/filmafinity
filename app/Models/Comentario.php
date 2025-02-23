@@ -10,6 +10,8 @@ class Comentario extends Model
     /** @use HasFactory<\Database\Factories\ComentarioFactory> */
     use HasFactory;
 
+    protected $fillable = ['texto', 'user_id'];
+
     public function comentarios()
     {
         return $this->morphMany(Comentario::class, 'comentable');
@@ -18,5 +20,10 @@ class Comentario extends Model
     public function comentable()
     {
         return $this->morphto();
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 }

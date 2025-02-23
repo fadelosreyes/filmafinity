@@ -12,7 +12,9 @@ class JuegoController extends Controller
      */
     public function index()
     {
-        //
+        return view('juegos.index', [
+            'juegos' => Juego::all(),
+        ]);
     }
 
     /**

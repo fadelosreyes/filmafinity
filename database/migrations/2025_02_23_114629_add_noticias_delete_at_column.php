@@ -11,12 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('comentarios', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
-            $table->text('texto');
-            $table->morphs('comentable');
-            $table->foreignId('user_id')->constrained();
+        Schema::table('comentarios', function (Blueprint $table) {
+            $table->softDeletes();
         });
     }
 
@@ -25,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('comentarios');
+        Schema::table('comentarios', function (Blueprint $table) {
+            $table->dropSoftDeletes();
+        });
     }
 };

@@ -7,6 +7,8 @@ use App\Models\Pelicula;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
+use function Pest\Laravel\get;
+
 class PeliculaController extends Controller
 {
     /**
@@ -15,8 +17,12 @@ class PeliculaController extends Controller
     public function index()
     {
         return view('peliculas.index', [
-            'peliculas' => Pelicula::all(),
+            'peliculas' => Pelicula::with('ficha.comentarios') // Eager loading de las relaciones
+                ->orderBy('created_at', 'desc') // Ordenar por fecha
+                ->paginate(8) // Paginación
         ]);
+        
+
     }
 
     /**

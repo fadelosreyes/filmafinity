@@ -12,18 +12,28 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('peliculas.index')" :active="request()->routeIs('peliculas.indeex')">
+                    <x-nav-link :href="route('peliculas.index')" :active="request()->routeIs('peliculas.index')">
                         {{ __('peliculas') }}
                     </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('juegos.index')" :active="request()->routeIs('juegos.indeex')">
+                    <x-nav-link :href="route('juegos.index')" :active="request()->routeIs('juegos.index')">
                         {{ __('juegos') }}
                     </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('fichas.index')" :active="request()->routeIs('fichas.indeex')">
+                    <x-nav-link :href="route('fichas.index')" :active="request()->routeIs('fichas.index')">
                         {{ __('fichas') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('comentarios.index')" :active="request()->routeIs('comentarios.index')">
+                        {{ __('comentarios') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('inicio.peliculas')" :active="request()->routeIs('inicio.peliculas')">
+                        {{ __('inicio') }}
                     </x-nav-link>
                 </div>
             </div>
