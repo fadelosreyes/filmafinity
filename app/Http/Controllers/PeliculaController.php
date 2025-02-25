@@ -17,12 +17,8 @@ class PeliculaController extends Controller
     public function index()
     {
         return view('peliculas.index', [
-            'peliculas' => Pelicula::with('ficha.comentarios') // Eager loading de las relaciones
-                ->orderBy('created_at', 'desc') // Ordenar por fecha
-                ->paginate(8) // Paginación
+            'peliculas' => Pelicula::with('ficha.comentarios')->get()
         ]);
-        
-
     }
 
     /**

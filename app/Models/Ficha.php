@@ -14,7 +14,7 @@ class Ficha extends Model
 
     public function fichable()
     {
-        return $this->morphto();
+        return $this->morphTo();
     }
 
     public function comentarios()
