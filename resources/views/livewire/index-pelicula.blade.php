@@ -91,7 +91,7 @@
         </table>
     </div>
     <div class="mt-4">
-        {{ $orde->links() }}
+        {{ $peliculas->links() }}
     </div>
 
     <div class="mt-6 text-center">
