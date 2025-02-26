@@ -33,7 +33,7 @@ Route::middleware(['auth'])->group(function () {
 
 
 Route::resource('fichas', FichaController::class);
-Route::resource('peliculas', PeliculaController::class);
+Route::resource('peliculas', PeliculaController::class)->middleware(['auth']);
 Route::resource('juegos', JuegoController::class);
 Route::resource('comentarios', ComentarioController::class);
 

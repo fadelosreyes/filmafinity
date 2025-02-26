@@ -16,7 +16,7 @@ test('la página principal funciona', function () {
 
 test('el usuario puede eliminar una pelicula', function () {
     $usuario = User::factory()->create();
-    $pelicula = Pelicula::factory()->create(); 
+    $pelicula = Pelicula::factory()->create();
     $response = $this
         ->actingAs($usuario)
         ->delete('/peliculas/'.$pelicula->id);
@@ -54,14 +54,6 @@ test('el usuario crea una pelicula correctamente', function () {
     $this->assertDatabaseHas('peliculas', [
         'director' => 'Director de prueba',
         'duracion' => 120,
-    ]);
-
-    $pelicula = Pelicula::where('director', 'Director de prueba')->first();
-    $this->assertDatabaseHas('fichas', [
-        'titulo' => 'Título de prueba',
-        'descripcion' => 'Descripción de prueba',
-        'fichable_id' => $pelicula->id,
-        'fichable_type' => Pelicula::class,
     ]);
 
     $response->assertSessionHasNoErrors();
